@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap');
+
+*{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+body{
+    overflow-x: hidden;
+}
+
+.img-thumbnails{
+    /* width: 100%;
+    min-height: 100%; */
+    width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    padding-bottom: 0.5em;
+    padding-right: 0.2em;
+    padding-left: 0.2em;
+}
+
+
+/* STYLE: nav for small screens START*/
+#check{
+    display: none;
+}
+.nav-small-collapsed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background-color: white;
+    transition: 0.5s;
+    transition: top 0.5s ease-out;
+}
+.nav-small-collapsed .website-logo{
+    color: #bbb;
+    font-size: 2em !important;
+    margin-left: 1em;
+}
+.last-name-orange{
+    color: orange;
+}
+#menu, #cancel{
+    position: absolute;
+    top: 20%;
+    right: 20px;
+    color: #bbb;
+    font-size: 25px;
+    cursor: pointer;
+    padding: 4px 8.67px;
+    background-color: white;
+}
+#cancel{
+    display: none;
+}
+.nav-expanded{
+    position: fixed;
+    left: -500px;
+    width: 74%;
+    height: 100vh;
+    transition: 0.5s;
+    padding-left: 2em;
+    overflow: hidden;
+    background-color: white;
+}
+.nav-expanded .website-logo{
+    color: #bbb;
+    font-size: 2em !important;
+    margin-bottom: 0.8em;
+}
+.nav-expanded .nav-link{
+    color: #bbb;
+    font-size: 17px;
+    width: min-content;
+}
+.nav-expanded .nav-link.active, .nav-expanded .nav-link:hover, .nav-expanded .social-icons span:hover{
+    color: orange;
+    font-size: medium;
+}
+.nav-expanded .social-icons{
+    margin-top: 40px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.nav-expanded .social-icons span{
+    font-size: 25px;
+    color: #ccc;
+}
+.nav-expanded #copyright{
+    color: #bbb;
+    margin-top: 30px;
+    font-size: 12px;
+}
+.content{
+    position: relative;
+    left: 0;
+    top: 80px;
+    margin-left: 1em;
+    transition: 0.5s;
+}
+#check:checked ~ .nav-expanded{
+    left: 0;
+    z-index: 101;
+}
+#check:checked ~ div label #menu{
+    display: none;
+    pointer-events: none;
+}
+#check:checked ~ div label #cancel{
+    display: block;
+}
+#check:checked ~ .content{
+    left: 74%;
+    opacity: 0.6;
+}
+#check:checked ~ .nav-small-collapsed{
+    background-color: transparent;
+}
+/* STYLE: nav for small screens END*/
+
+/* nav for large screen */
+@media only screen and (min-width: 768px){
+    body{
+        display: flex;
+    }
+    .nav-small-collapsed{
+        display: none;
+    }
+    .nav-expanded{
+        position: static;
+        flex: 0 0 230px;
+        width: auto;
+    }
+    .nav-expanded .website-logo{
+        font-size: 1.5em !important;
+    }
+    .nav-expanded .page-links .nav-link{
+        font-size: 15px;
+        padding: 0.3em 0;
+    }
+    .nav-expanded .social-icons{
+        position: relative;
+        top: 30%;
+    }
+    .nav-expanded .social-icons .nav-link{
+        margin-right: 1.5em;
+        padding: 0.5em 0;
+    }
+    .nav-expanded .social-icons span{
+        font-size: 11px;
+    }
+    .nav-expanded #copyright{
+        position: relative;
+        top: 25%;
+    }
+    .content{
+        position: static;
+        flex: 1;
+        height: 100vh;
+        overflow-y: auto;
+        margin-left: 1%;
+    }
+    #check:checked ~ .content{
+        opacity: 1;
+    }
+ }
+ /* #contact .card:hover i,#contact .card:hover h4{
+	color: #87d37c;
+}
+.contact-info .fa {
+    padding-right: 5px;
+  }
+  
+  #contact .form-control {
+    border: none;
+    border-bottom: 2px solid #f0f0f0;
+    border-radius: 0px;
+    box-shadow: none;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    -webkit-transition: all ease-in-out 0.4s;
+    transition: all ease-in-out 0.4s;
+  }
+  
+  #contact .form-control:focus {
+    border-bottom-color: #999999;
+  }
+  
+  #contact input {
+    height: 55px;
+  }
+  
+  #contact button#submit {
+    background: #2b2b2b;
+    border: none;
+    border-radius: 50px;
+    color: #ffffff;
+    height: 50px;
+    margin-top: 24px;
+  }
+  
+  #contact button#submit:hover {
+    background: #7682cc;
+    color: #ffffff;
+  }
+  
+   */
