@@ -166,9 +166,7 @@ body{
         opacity: 1;
     }
  }
- /* #contact .card:hover i,#contact .card:hover h4{
-	color: #87d37c;
-}
+ 
 .contact-info .fa {
     padding-right: 5px;
   }
@@ -190,6 +188,7 @@ body{
   }
   
   #contact input {
+    
     height: 55px;
   }
   
@@ -207,4 +206,4 @@ body{
     color: #ffffff;
   }
   
-   */
+  
